@@ -4,6 +4,9 @@ Get random 🎲 things the easy way.
 Simple, quick and light 🤏
 
 📂 Zipped under 5kb with updates.
+| index.js    | index.min.js |
+| ----------- | ------------ |
+| 2,36 KB     | 1017 Bytes   |
 
 ## Install
 
