@@ -1,0 +1,30 @@
+{
+  "name": "@hikyu/random",
+  "version": "1.0.32",
+  "description": "Get random 🎲 things the easy way. Simple, quick and light 🤏. 📂 Zipped under 2kb with updates.",
+  "main": "index.min",
+  "scripts": {
+    "upload": "uglifyjs index.js -c -m -o index.min.js && npm version patch && npm publish --access=public"
+  },
+  "keywords": [
+    "random",
+    "randomness",
+    "random-number",
+    "random-number-generator",
+    "random-number-generator-js",
+    "random-number-generator-js-node",
+    "number",
+    "number-generator",
+    "number-generator-js",
+    "integer",
+    "float",
+    "double",
+    "decimal",
+    "random-integer",
+    "random-float",
+    "random-double",
+    "random-decimal"
+  ],
+  "author": "hikyu",
+  "license": "ISC"
+}
