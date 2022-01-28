@@ -15,6 +15,13 @@ function number(min, max, decimal = 0) {
     //! nicht zu hoch
 }
 
+
+function digit() {
+    // random number from 0 to 9 with math random
+    return Math.floor(Math.random() * 10);
+}
+
+ 
 /**
  * Index of array
  * @param {Array} array

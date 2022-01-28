@@ -3,6 +3,12 @@
 Get random 🎲 things the easy way.
 Simple, quick and light 🤏
 
+![](https://img.shields.io/bundlephobia/min/@hikyu/random?style=flat-square)
+![](https://img.shields.io/npm/dw/@hikyu/random?style=flat-square)
+![](https://img.shields.io/github/last-commit/jhikyu/-hikyu-random?style=flat-square)
+
+
+
 📂 Zipped under 5kb with updates.
 | index.js    | index.min.js |
 | ----------- | ------------ |
@@ -42,6 +48,13 @@ number(1, 10); // > 4
     - [Emoji](#emoji)
 
 ### Numbers 🔢
+
+#### Digit
+
+```js
+// Random number from 0 to 9
+digit(); // > 8
+```
 
 #### Integer
 
