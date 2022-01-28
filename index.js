@@ -15,10 +15,14 @@ function number(min, max, decimal = 0) {
     //! nicht zu hoch
 }
 
-
-function digit() {
-    // random number from 0 to 9 with math random
-    return Math.floor(Math.random() * 10);
+/**
+ * Digit
+ * @param {Number} max 
+ * @returns {Number}
+ */
+function digit(max = 9) {
+    let r = Math.floor(Math.random() * 10);
+    return r > max ? max : r;
 }
 
  
@@ -105,10 +109,29 @@ function emoji() {
  * @returns {Array}
  */
  function dice(sides, amount) {
-     let arr = [];
-     for(let i = 0 ; i < amount; i++)
-        arr.push(number(1, sides));
-    return arr;
+    let arr = [];
+    for(let i = 0 ; i < amount; i++)
+       arr.push(number(1, sides));
+   return arr;
+}
+
+/**
+ * Byte
+ * @returns {String}
+ */
+ function byte() {
+    let result = [];
+        for(let i = 0; i < 8; i++)
+            result.push(digit(1));
+    return result.join('');
+}
+
+/**
+ * Bit
+ * @returns {Number}
+ */
+ function bit() {
+    return digit(1);
 }
 
 

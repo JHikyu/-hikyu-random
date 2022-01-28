@@ -3,16 +3,11 @@
 Get random 🎲 things the easy way.
 Simple, quick and light 🤏
 
+📂 Zipped under 5kb with updates.
+
 ![](https://img.shields.io/bundlephobia/min/@hikyu/random?style=flat-square)
 ![](https://img.shields.io/npm/dw/@hikyu/random?style=flat-square)
 ![](https://img.shields.io/github/last-commit/jhikyu/-hikyu-random?style=flat-square)
-
-
-
-📂 Zipped under 5kb with updates.
-| index.js    | index.min.js |
-| ----------- | ------------ |
-| 2,36 KB     | 1017 Bytes   |
 
 ## Install
 
@@ -42,10 +37,10 @@ number(1, 10); // > 4
 - [Arrays 📃](#array)
     - [Index of array](#index-of-array)
     - [Value of array](#value-of-array)
-    - [Dice 🎲](#dice-🎲)
 - [Misc 🤨](#misc)
     - [Colors](#color---rgb)
     - [Emoji](#emoji)
+    - [Dice 🎲](#dice-🎲)
 
 ### Numbers 🔢
 
@@ -54,6 +49,9 @@ number(1, 10); // > 4
 ```js
 // Random number from 0 to 9
 digit(); // > 8
+
+// Random number from 0 to 4
+digit(4); // > 1
 ```
 
 #### Integer
@@ -84,12 +82,6 @@ index(["hello", "world", 1]); // > 1
 value("hello", "world", 1); // > "hello"
 ```
 
-#### Dice 🎲
-```js
-// Generate array of length x of random numbers
-dice(20, 3); // > [ 2, 7, 11 ]
-```
-
 ### Misc 🤨
 
 #### Color - RGB
@@ -114,4 +106,22 @@ hex(); // > "#6c7ac"
 ```js
 // Random Emoji
 emoji(); // > "🚀"
+```
+
+#### Dice 🎲
+```js
+// Generate 3 values from 1 to 20
+dice(20, 3); // > [ 2, 7, 11 ]
+```
+
+#### Byte
+```js
+// Generate 3 values from 1 to 20
+byte(); // > "0101 1110"
+```
+
+#### Bit
+```js
+// Generate 0 or 1
+bit(); // > 0
 ```
