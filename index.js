@@ -21,8 +21,7 @@ function number(min, max, decimal = 0) {
  * @returns {Number}
  */
 function digit(max = 9) {
-    let r = Math.floor(Math.random() * 10);
-    return r > max ? max : r;
+    return Math.floor(Math.random() * (max+1 - 0) ) + 0;
 }
 
  
@@ -120,10 +119,7 @@ function emoji() {
  * @returns {String}
  */
  function byte() {
-    let result = [];
-        for(let i = 0; i < 8; i++)
-            result.push(digit(1));
-    return result.join('');
+    return template('1111 1111');
 }
 
 /**
@@ -134,6 +130,52 @@ function emoji() {
     return digit(1);
 }
 
+/**
+ * Template
+ * @param {String} string
+ * @param {Object} options
+ * @returns {Any}
+ */
+function template(string, options = null) {
+    let split = string.split('');
+    
+    for(let i = 0 ; i < split.length; i++) {
+        let now = split[i];
+
+        // lowercase character
+        if(now === 'c') {
+            split[i] = String.fromCharCode(number(97, 122));
+        }
+
+        // upper case character
+        else if(now === 'C') {
+            split[i] = String.fromCharCode(number(65, 90));
+        }
+
+        // upper or lower case character
+        else if(now === 's') {
+            let lu = [String.fromCharCode(number(97, 122)), String.fromCharCode(number(65, 90))];
+            split[i] = value(lu);
+        }
+
+        // number
+        else if(now <= 9 && now >= 1 || now === 'd') {
+            split[i] = digit(now === 'd' ? 10 : now);
+        }
+
+        // any
+        else if(now === 'a') {
+            let any = [digit(now === 'd' ? 10 : now), String.fromCharCode(number(97, 122)), String.fromCharCode(number(65, 90))];
+            split[i] = value(any);
+        }
+    }
+
+    return split.join('');
+}
+
+
+
+
 
 module.exports = {
     number,
@@ -143,5 +185,8 @@ module.exports = {
     rgba,
     hex,
     emoji,
-    dice
+    dice,
+    byte,
+    bit,
+    template,
 };

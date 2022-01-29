@@ -3,7 +3,7 @@
 Get random 🎲 things the easy way.
 Simple, quick and light 🤏
 
-📂 Zipped under 5kb with updates.
+📂 Zipped under 2kb with updates.
 
 ![](https://img.shields.io/bundlephobia/min/@hikyu/random?style=flat-square)
 ![](https://img.shields.io/npm/dw/@hikyu/random?style=flat-square)
@@ -38,9 +38,11 @@ number(1, 10); // > 4
     - [Index of array](#index-of-array)
     - [Value of array](#value-of-array)
 - [Misc 🤨](#misc)
+    - [Template 🔨](#template)
     - [Colors](#color---rgb)
     - [Emoji](#emoji)
     - [Dice 🎲](#dice-🎲)
+    - [Bits and Bytes](#byte)
 
 ### Numbers 🔢
 
@@ -84,6 +86,34 @@ value("hello", "world", 1); // > "hello"
 
 ### Misc 🤨
 
+#### Template
+| Meaning | Charcode | Outputs                 |
+|---------|----------|-------------------------|
+| Any     | a        | Any of the below        |
+| Char    | c        | Lowercase char          |
+| Char    | C        | Uppercase char          |
+| Char    | s        | Upper or lowercase char |
+| Digit   | d        | Digit 0-9               |
+| Digit   | 0-9      | Digit up to value       |
+```js
+// Generate template string
+template('aaaaa'); // > "6qxsF"
+template('ccccc'); // > "htcfi"
+template('CCCCC'); // > "UNHCG"
+template('sssss'); // > "ZaSrV"
+template('ddddd'); // > "54628"
+template('00033'); // > "00031"
+
+// Password example
+template('sdssdssdsssdd'); // > d5pi7tI7vWr85
+
+// Byte example
+template('1111 1111'); // > 0101 1101
+
+// Telephone example
+template('ddd-ddd-dddd'); // > 607-321-8576
+```
+
 #### Color - RGB
 ```js
 // Random RGB color as string
@@ -99,7 +129,7 @@ rgba(); // > "rgba(251, 41, 72, 0.47)"
 #### Color - HEX
 ```js
 // Random RGB color as string
-hex(); // > "#6c7ac"
+hex(); // > "#6c7ac4"
 ```
 
 #### Emoji
