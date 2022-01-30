@@ -70,6 +70,13 @@ number(1, 10); // > 4
 number(1, 10, 2); // > 5.19
 ```
 
+#### Boolean
+
+```js
+// Generates either true or false
+boolean(); // > false
+```
+
 ### Array 📃
 
 #### Index of array

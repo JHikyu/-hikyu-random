@@ -5,6 +5,7 @@
  * @param {Number} decimal
  * @returns {Number}
  */
+
 function number(min, max, decimal = 0) {
     let precision = Math.pow(10, decimal);
     // random number between min and max
@@ -15,13 +16,27 @@ function number(min, max, decimal = 0) {
     //! nicht zu hoch
 }
 
+function newNumber(min, max, decimal = 0) {
+    let maxGen = max-min;
+
+    let maxDigits = maxGen.toString().length;
+    let templateString = '';
+    for(let i = 0 ; i < maxDigits; i++) {
+        let currentDigit = maxGen.toString()[i];
+        templateString += currentDigit;
+    }
+
+    return parseInt(template(templateString)) + min || NaN;
+    //TODO: this
+}
+
 /**
  * Digit
  * @param {Number} max 
  * @returns {Number}
  */
 function digit(max = 9) {
-    return Math.floor(Math.random() * (max+1 - 0) ) + 0;
+    return (Math.floor(Math.random() * (max+1 - 0) ) + 0);
 }
 
  
@@ -160,7 +175,7 @@ function template(string, options = null) {
 
         // number
         else if(now <= 9 && now >= 1 || now === 'd') {
-            split[i] = digit(now === 'd' ? 10 : now);
+            split[i] = digit(now === 'd' ? 9 : parseInt(now));
         }
 
         // any
@@ -173,8 +188,9 @@ function template(string, options = null) {
     return split.join('');
 }
 
-
-
+function boolean() {
+    return Math.random() >= 0.5;
+}
 
 
 module.exports = {
@@ -189,4 +205,5 @@ module.exports = {
     byte,
     bit,
     template,
+    boolean,
 };
