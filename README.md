@@ -139,6 +139,12 @@ rgba(); // > "rgba(251, 41, 72, 0.47)"
 hex(); // > "#6c7ac4"
 ```
 
+#### Color - HSL
+```js
+// Random HSL color as string
+hsl(); // > "hsl(153, 44%, 64%)"
+```
+
 #### Emoji
 ```js
 // Random Emoji
