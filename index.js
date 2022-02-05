@@ -193,6 +193,11 @@ function boolean() {
 }
 
 
+function hsl() {
+    return `hsl(${number(0, 360)}, ${number(0, 100)}%, ${number(0, 100)}%)`;
+}
+
+
 module.exports = {
     number,
     index,
@@ -200,6 +205,7 @@ module.exports = {
     rgb,
     rgba,
     hex,
+    hsl,
     emoji,
     dice,
     byte,
