@@ -1,6 +1,6 @@
 {
   "name": "@hikyu/random",
-  "version": "1.2.14",
+  "version": "1.2.15",
   "description": "Get random 🎲 things the easy way. Simple, quick and light 🤏. 📂 Zipped under 2kb with updates.",
   "main": "index.min",
   "scripts": {

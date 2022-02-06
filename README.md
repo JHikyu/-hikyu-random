@@ -102,6 +102,7 @@ value("hello", "world", 1); // > "hello"
 | Char    | s        | Upper or lowercase char |
 | Digit   | d        | Digit 0-9               |
 | Digit   | 0-9      | Digit up to value       |
+| Escape  | $        | Escape the next char    |
 ```js
 // Generate template string
 template('aaaaa'); // > "6qxsF"
@@ -110,6 +111,7 @@ template('CCCCC'); // > "UNHCG"
 template('sssss'); // > "ZaSrV"
 template('ddddd'); // > "54628"
 template('00033'); // > "00031"
+template('ccc - $3 $Ch$ar$a$cters'); // > "zpb - 3 Characters"
 
 // Password example
 template('sdssdssdsssdd'); // > d5pi7tI7vWr85

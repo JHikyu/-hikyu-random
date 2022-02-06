@@ -154,11 +154,24 @@ function emoji() {
 function template(string, options = null) {
     let split = string.split('');
     
+    let escapeNext = false;
+
     for(let i = 0 ; i < split.length; i++) {
         let now = split[i];
 
+        if(escapeNext) {
+            split[i] = now;
+            escapeNext = false;
+        }
+
+        else if(now == '$') {
+            split.splice(i, 1);
+            i--;
+            escapeNext = true;
+        }
+
         // lowercase character
-        if(now === 'c') {
+        else if(now === 'c') {
             split[i] = String.fromCharCode(number(97, 122));
         }
 
@@ -180,7 +193,7 @@ function template(string, options = null) {
 
         // any
         else if(now === 'a') {
-            let any = [digit(now === 'd' ? 10 : now), String.fromCharCode(number(97, 122)), String.fromCharCode(number(65, 90))];
+            let any = [digit(9), String.fromCharCode(number(97, 122)), String.fromCharCode(number(65, 90))];
             split[i] = value(any);
         }
     }
